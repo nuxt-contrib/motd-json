@@ -40,11 +40,13 @@ Library for retrieving a random motd from a json input with filter support
 
 For easy validation a JSON Schema and validate export is included:
 
+> The peer dependency ajv needs to be installed for validate to work
+
 ```js
 import { validate } from 'motd-json'
 import yourMessages from './your-messages.json'
 
-validate(yourMessages) // true || false
+await validate(yourMessages) // resolves to true or false
 ```
 
 # Options
@@ -69,6 +71,8 @@ The mapped value is then compared to the message tag values to determine whether
 
 # Usage
 
+### Basic with validation
+
 ```js
 import { motd, validate } from 'motd-json'
 import messages from './my-messages.json'
@@ -86,6 +90,29 @@ if (validate(messages)) {
   console.log(motd(messages, options))
 }
 ```
+
+### Create a motd generator
+
+```js
+import { filter, motd } from 'motd-json'
+import messages from './my-messages.json'
+
+const options = {
+  regional: true,
+  tags: {
+    typescript: false,
+    version: 'v2.2.3',
+    modules: ['axios', 'i18n']
+  }
+}
+
+const filteredMessages = filter(messages, options)
+const motdGenerator = () => motd(filteredMessages)
+
+motdGenerator()
+motdGenerator()
+```
+
 
 # Example messages
 
