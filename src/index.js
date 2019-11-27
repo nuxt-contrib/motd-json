@@ -1,4 +1,3 @@
-import Ajv from 'ajv'
 import osLocale from 'os-locale'
 import semver from 'semver'
 import schema from '../src/schema'
@@ -104,9 +103,19 @@ export function filter(data, options) {
 
 let ajvValidate
 
-export function validate(data) {
+export async function validate(data) {
   if (!ajvValidate) {
-    ajvValidate = new Ajv().compile(schema)
+    try {
+      const Ajv = await import('ajv').then(m => m.default || m)
+      ajvValidate = new Ajv().compile(schema)
+    } catch (err) {
+      if (err.code === 'MODULE_NOT_FOUND') {
+        console.error('ajv not found, please install the peer dependency') // eslint-disable-line no-console
+        return true
+      }
+
+      throw err
+    }
   }
 
   return ajvValidate(data)

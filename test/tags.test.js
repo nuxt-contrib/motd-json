@@ -54,8 +54,8 @@ const data = [
 ]
 
 describe('motd', () => {
-  test('schema', () => {
-    expect(motd.validate(data)).toBe(true)
+  test('schema', async () => {
+    await expect(motd.validate(data)).resolves.toBe(true)
   })
 
   test('filterTags doesnt filter without tags specified', () => {

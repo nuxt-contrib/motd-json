@@ -44,8 +44,8 @@ describe('motd', () => {
     jest.restoreAllMocks()
   })
 
-  test('schema', () => {
-    expect(motd.validate(data)).toBe(true)
+  test('schema', async () => {
+    await expect(motd.validate(data)).resolves.toBe(true)
   })
 
   test('getRegion only returns region part from locale', () => {
