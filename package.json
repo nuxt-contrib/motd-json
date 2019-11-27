@@ -32,7 +32,8 @@
     "bili": "^4.8.1",
     "codecov": "^3.6.1",
     "eslint": "^6.7.1",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "standard-version": "^7.0.1"
   },
   "peerDependencies": {
     "ajv": "^6.10.2"
