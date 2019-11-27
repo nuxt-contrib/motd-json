@@ -30,12 +30,13 @@ Library for retrieving a random motd from a json input with filter support
         "type": ["semver", "number", "boolean", "set"],
         "value":
           <string> // for semver
-          <number> // for number
+          <number> // for number, matches only equal or greater than
           <boolean> // for boolean
           Array<any> // for set
     }
   }
 ]
+```
 
 For easy validation a JSON Schema and validate export is included:
 
