@@ -12,6 +12,10 @@
     "test:unit": "jest",
     "test": "run-s test:*"
   },
+  "files": [
+    "dist",
+    "src/schema.json"
+  ],
   "dependencies": {
     "os-locale": "^4.0.0",
     "semver": "^6.3.0"

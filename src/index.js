@@ -2,13 +2,15 @@ import osLocale from 'os-locale'
 import semver from 'semver'
 import schema from '../src/schema'
 
-export function getRegion() {
+export { schema }
+
+export function getRegion () {
   return osLocale.sync({ spawn: false })
     .substr(3, 2)
     .toLowerCase()
 }
 
-export function filterPeriod(data, now) {
+export function filterPeriod (data, now) {
   if (now && typeof now === 'string') {
     now = new Date(now)
   }
@@ -28,7 +30,7 @@ export function filterPeriod(data, now) {
   })
 }
 
-export function filterRegional(data, region) {
+export function filterRegional (data, region) {
   if (region) {
     region = region.toLowerCase()
   } else {
@@ -38,7 +40,7 @@ export function filterRegional(data, region) {
   return data.filter(({ regions }) => !regions || regions.includes(region))
 }
 
-export function filterTags(data, tags) {
+export function filterTags (data, tags) {
   if (!tags) {
     return data
   }
@@ -78,7 +80,7 @@ export function filterTags(data, tags) {
   })
 }
 
-export function filter(data, options) {
+export function filter (data, options) {
   const {
     region = '',
     regional = false,
@@ -103,7 +105,7 @@ export function filter(data, options) {
 
 let ajvValidate
 
-export async function validate(data) {
+export async function validate (data) {
   if (!ajvValidate) {
     try {
       const Ajv = await import('ajv').then(m => m.default || m)
@@ -121,11 +123,17 @@ export async function validate(data) {
   return ajvValidate(data)
 }
 
-export function motd(data, options) {
-  const motds = filter(data, options)
+export function motd (data, options) {
+  if (options) {
+    data = filter(data, options)
+  }
 
-  const index = Math.floor(Math.random() * motds.length)
+  if (!data.length) {
+    return ''
+  }
 
-  const { message } = motds[index]
+  const index = Math.floor(Math.random() * data.length)
+
+  const { message } = data[index]
   return message || ''
 }
