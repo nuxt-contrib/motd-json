@@ -62,14 +62,6 @@ jobs:
           name: Unit Tests
           command: yarn test --coverage && yarn coverage
 
-  test-types:
-    executor: node
-    steps:
-      - attach-project
-      - run:
-          name: Type Tests
-          command: yarn test:types
-
 workflows:
   version : 2
 
