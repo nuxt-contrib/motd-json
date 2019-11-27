@@ -170,6 +170,9 @@ if (validate(messages)) {
   }
 ]
 ```
+# TODO
+
+- [ ] Add support for different comparison operators for tags
 
 # License
 
