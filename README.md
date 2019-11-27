@@ -212,8 +212,8 @@ MIT
 [npm-downloads-src]: https://img.shields.io/npm/dt/motd-json.svg?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/motd-json
 
-[circle-ci-src]: https://img.shields.io/circleci/project/github/pimlie/motd-json.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/pimlie/motd-json
+[circle-ci-src]: https://img.shields.io/circleci/project/github/jsless/motd-json.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/jsless/motd-json
 
-[codecov-src]: https://img.shields.io/codecov/c/github/pimlie/motd-json.svg?style=flat-square
-[codecov-href]: https://codecov.io/gh/pimlie/motd-json
+[codecov-src]: https://img.shields.io/codecov/c/github/jsless/motd-json.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/jsless/motd-json
