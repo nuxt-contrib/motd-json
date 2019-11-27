@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`motd filterTags doesnt filter when data has no tags 1`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+]
+`;
+
+exports[`motd filterTags doesnt filter without tags specified 1`] = `
+Array [
+  Object {
+    "message": "You are using v2.x",
+    "tags": Array [
+      Object {
+        "name": "version",
+        "type": "semver",
+        "value": "v2.x",
+      },
+    ],
+  },
+  Object {
+    "message": "You are using v3.x",
+    "tags": Array [
+      Object {
+        "name": "version",
+        "type": "semver",
+        "value": "v3.x",
+      },
+    ],
+  },
+  Object {
+    "message": "You are using 10 modules or more",
+    "tags": Array [
+      Object {
+        "name": "modulesCount",
+        "type": "number",
+        "value": 10,
+      },
+    ],
+  },
+  Object {
+    "message": "You are using the axios or http module",
+    "tags": Array [
+      Object {
+        "name": "modules",
+        "type": "set",
+        "value": Array [
+          "axios",
+          "http",
+        ],
+      },
+    ],
+  },
+  Object {
+    "message": "You are using typescript",
+    "tags": Array [
+      Object {
+        "name": "typescript",
+        "type": "boolean",
+        "value": true,
+      },
+    ],
+  },
+]
+`;

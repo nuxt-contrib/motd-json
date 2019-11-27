@@ -1,0 +1,31 @@
+{
+  "name": "motd-json",
+  "version": "0.1.0",
+  "description": "Library for retrieving a random motd from a json input with filter support",
+  "license": "MIT",
+  "author": "pimlie",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "build": "bili --format cjs,es src/index.js",
+    "lint": "eslint src test",
+    "test:unit": "jest",
+    "test": "run-s test:*"
+  },
+  "dependencies": {
+    "ajv": "^6.10.2",
+    "os-locale": "^4.0.0",
+    "semver": "^6.3.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.7.4",
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "ajv-cli": "^3.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "bili": "^4.8.1",
+    "eslint": "^6.7.1",
+    "jest": "^24.9.0",
+    "npm-run-all": "^4.1.5"
+  }
+}

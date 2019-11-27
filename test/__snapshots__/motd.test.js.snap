@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`motd filterMotds returns all 1`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+  Object {
+    "message": "my multi-region message",
+    "regions": Array [
+      "en",
+      "nl",
+    ],
+  },
+  Object {
+    "message": "mijn test bericht",
+    "regions": Array [
+      "nl",
+    ],
+  },
+  Object {
+    "message": "Merry Christmas",
+    "period": Object {
+      "from": "0000-12-01",
+      "till": "0000-12-27",
+    },
+  },
+  Object {
+    "message": "Fijne Sinterklaas",
+    "period": Object {
+      "from": "2019-11-16",
+      "till": "2019-12-05",
+    },
+    "regions": Array [
+      "nl",
+    ],
+  },
+]
+`;
+
+exports[`motd filterPeriod returns motds for current period only 1`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+  Object {
+    "message": "my multi-region message",
+    "regions": Array [
+      "en",
+      "nl",
+    ],
+  },
+  Object {
+    "message": "mijn test bericht",
+    "regions": Array [
+      "nl",
+    ],
+  },
+  Object {
+    "message": "Fijne Sinterklaas",
+    "period": Object {
+      "from": "2019-11-16",
+      "till": "2019-12-05",
+    },
+    "regions": Array [
+      "nl",
+    ],
+  },
+]
+`;
+
+exports[`motd filterPeriod returns motds for current period only 2`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+  Object {
+    "message": "my multi-region message",
+    "regions": Array [
+      "en",
+      "nl",
+    ],
+  },
+  Object {
+    "message": "mijn test bericht",
+    "regions": Array [
+      "nl",
+    ],
+  },
+  Object {
+    "message": "Merry Christmas",
+    "period": Object {
+      "from": "0000-12-01",
+      "till": "0000-12-27",
+    },
+  },
+  Object {
+    "message": "Fijne Sinterklaas",
+    "period": Object {
+      "from": "2019-11-16",
+      "till": "2019-12-05",
+    },
+    "regions": Array [
+      "nl",
+    ],
+  },
+]
+`;
+
+exports[`motd filterPeriod returns motds for current period only 3`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+  Object {
+    "message": "my multi-region message",
+    "regions": Array [
+      "en",
+      "nl",
+    ],
+  },
+  Object {
+    "message": "mijn test bericht",
+    "regions": Array [
+      "nl",
+    ],
+  },
+  Object {
+    "message": "Merry Christmas",
+    "period": Object {
+      "from": "0000-12-01",
+      "till": "0000-12-27",
+    },
+  },
+]
+`;
+
+exports[`motd filterRegional only returns motds for current region 1`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+  Object {
+    "message": "my multi-region message",
+    "regions": Array [
+      "en",
+      "nl",
+    ],
+  },
+  Object {
+    "message": "mijn test bericht",
+    "regions": Array [
+      "nl",
+    ],
+  },
+  Object {
+    "message": "Merry Christmas",
+    "period": Object {
+      "from": "0000-12-01",
+      "till": "0000-12-27",
+    },
+  },
+  Object {
+    "message": "Fijne Sinterklaas",
+    "period": Object {
+      "from": "2019-11-16",
+      "till": "2019-12-05",
+    },
+    "regions": Array [
+      "nl",
+    ],
+  },
+]
+`;
+
+exports[`motd filterRegional only returns motds for current region 2`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+  Object {
+    "message": "my multi-region message",
+    "regions": Array [
+      "en",
+      "nl",
+    ],
+  },
+  Object {
+    "message": "Merry Christmas",
+    "period": Object {
+      "from": "0000-12-01",
+      "till": "0000-12-27",
+    },
+  },
+]
+`;
+
+exports[`motd filterRegional only returns motds for current region 3`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+  Object {
+    "message": "Merry Christmas",
+    "period": Object {
+      "from": "0000-12-01",
+      "till": "0000-12-27",
+    },
+  },
+]
+`;
+
+exports[`motd motd returns message 1`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+]
+`;
