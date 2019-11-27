@@ -54,7 +54,7 @@ validate(yourMessages) // true || false
 - `region` _string_
 - `regional` _boolean_
 
-If _region_ is empty and _regional_ is true, the users region is determined from the territory string of their os locale using [`os-locale'](https://github.com/sindresorhus/os-locale)
+If _region_ is empty and _regional_ is true, the users region is determined from the territory string of their os locale using [`os-locale`](https://github.com/sindresorhus/os-locale)
 
 Messages are matched when they either dont list any region or the user region is included in the list of regions for a message
 
