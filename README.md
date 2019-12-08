@@ -20,10 +20,10 @@ Library for retrieving a random motd from a json input with filter support
   {
     "message": <string>, // required, the message of the day
     "regions": [<string>], // optional, the regions/territories to show this message for
-    "period": { // optional, use 0000 as year for a yearly recurring period
+    "periods": [{ // optional, use 0000 as year for a yearly recurring period
       "from": <date-time>, // the start date-time this message could be shown
       "till": <date-time> // the end date-time this message could be shown
-    },
+    }],
     "tags": { // optional
       {
         "name": <string>,
@@ -129,6 +129,16 @@ motdGenerator()
   {
     message: 'mijn test bericht',
     regions: ['nl']
+  },
+  {
+    message: 'Happy New Year',
+    periods: [{
+      from: '0000-12-28',
+      till: '0000-12-31'
+    }, {
+      from: '0000-01-01',
+      till: '0000-01-05'
+    }]
   },
   {
     message: 'Merry Christmas',

@@ -38,7 +38,7 @@ Array [
 ]
 `;
 
-exports[`motd filterPeriod returns motds for current period only 1`] = `
+exports[`motd filterPeriod returns motds for current period only (2019-11-20) 1`] = `
 Array [
   Object {
     "message": "my test message",
@@ -69,7 +69,7 @@ Array [
 ]
 `;
 
-exports[`motd filterPeriod returns motds for current period only 2`] = `
+exports[`motd filterPeriod returns motds for current period only (2019-12-01) 1`] = `
 Array [
   Object {
     "message": "my test message",
@@ -107,7 +107,7 @@ Array [
 ]
 `;
 
-exports[`motd filterPeriod returns motds for current period only 3`] = `
+exports[`motd filterPeriod returns motds for current period only (2019-12-10) 1`] = `
 Array [
   Object {
     "message": "my test message",
@@ -131,6 +131,27 @@ Array [
       "from": "0000-12-01",
       "till": "0000-12-27",
     },
+  },
+]
+`;
+
+exports[`motd filterPeriod returns motds for current period only (2020-01-04) 1`] = `
+Array [
+  Object {
+    "message": "my test message",
+  },
+  Object {
+    "message": "my multi-region message",
+    "regions": Array [
+      "en",
+      "nl",
+    ],
+  },
+  Object {
+    "message": "mijn test bericht",
+    "regions": Array [
+      "nl",
+    ],
   },
 ]
 `;
@@ -151,6 +172,19 @@ Array [
     "message": "mijn test bericht",
     "regions": Array [
       "nl",
+    ],
+  },
+  Object {
+    "message": "Happy New Year",
+    "periods": Array [
+      Object {
+        "from": "0000-12-28",
+        "till": "0000-12-31",
+      },
+      Object {
+        "from": "0000-01-01",
+        "till": "0000-01-05",
+      },
     ],
   },
   Object {
@@ -186,6 +220,19 @@ Array [
     ],
   },
   Object {
+    "message": "Happy New Year",
+    "periods": Array [
+      Object {
+        "from": "0000-12-28",
+        "till": "0000-12-31",
+      },
+      Object {
+        "from": "0000-01-01",
+        "till": "0000-01-05",
+      },
+    ],
+  },
+  Object {
     "message": "Merry Christmas",
     "period": Object {
       "from": "0000-12-01",
@@ -199,6 +246,19 @@ exports[`motd filterRegional only returns motds for current region 3`] = `
 Array [
   Object {
     "message": "my test message",
+  },
+  Object {
+    "message": "Happy New Year",
+    "periods": Array [
+      Object {
+        "from": "0000-12-28",
+        "till": "0000-12-31",
+      },
+      Object {
+        "from": "0000-01-01",
+        "till": "0000-01-05",
+      },
+    ],
   },
   Object {
     "message": "Merry Christmas",

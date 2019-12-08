@@ -18,12 +18,18 @@ export function filterPeriod (data, now) {
   now = now || new Date().getTime()
   const currentYear = `${new Date().getFullYear()}-`
 
-  return data.filter(({ period: { from, till } = {} }) => {
-    if (from && till) {
-      from = new Date(from.replace('0000-', currentYear)).getTime()
-      till = new Date(till.replace('0000-', currentYear)).getTime()
+  return data.filter(({ periods, period }) => {
+    if (!periods && period) {
+      periods = [period]
+    }
 
-      return now >= from && now <= till
+    if (periods) {
+      return periods.some(({ from, till }) => {
+        from = new Date(from.replace('0000-', currentYear)).getTime()
+        till = new Date(till.replace('0000-', currentYear)).getTime()
+
+        return now >= from && now <= till
+      })
     }
 
     return true

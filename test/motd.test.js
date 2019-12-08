@@ -18,6 +18,16 @@ const data = [
     regions: ['nl']
   },
   {
+    message: 'Happy New Year',
+    periods: [{
+      from: '0000-12-28',
+      till: '0000-12-31'
+    }, {
+      from: '0000-01-01',
+      till: '0000-01-05'
+    }]
+  },
+  {
     message: 'Merry Christmas',
     period: {
       from: '0000-12-01',
@@ -55,14 +65,23 @@ describe('motd', () => {
     expect(motd.getRegion()).toBe('uk')
   })
 
-  test('filterPeriod returns motds for current period only', () => {
-    let now = new Date('2019-11-20')
+  test('filterPeriod returns motds for current period only (2019-11-20)', () => {
+    const now = new Date('2019-11-20')
     expect(motd.filterPeriod(data, now)).toMatchSnapshot()
+  })
 
-    now = new Date('2019-12-01')
+  test('filterPeriod returns motds for current period only (2019-12-01)', () => {
+    const now = new Date('2019-12-01')
     expect(motd.filterPeriod(data, now)).toMatchSnapshot()
+  })
 
-    now = new Date('2019-12-10')
+  test('filterPeriod returns motds for current period only (2019-12-10)', () => {
+    const now = new Date('2019-12-10')
+    expect(motd.filterPeriod(data, now)).toMatchSnapshot()
+  })
+
+  test('filterPeriod returns motds for current period only (2020-01-04)', () => {
+    const now = new Date('2020-01-04')
     expect(motd.filterPeriod(data, now)).toMatchSnapshot()
   })
 
@@ -79,7 +98,7 @@ describe('motd', () => {
   test('motd returns message', () => {
     const options = {
       region: 'fr',
-      date: '2019-01-01',
+      date: '2019-07-01',
       tags: {}
     }
 
