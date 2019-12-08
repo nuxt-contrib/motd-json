@@ -1,6 +1,6 @@
 {
   "name": "motd-json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Library for retrieving a random motd from a json input with filter support",
   "license": "MIT",
   "author": "pimlie",
